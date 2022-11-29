@@ -6,4 +6,3 @@
     const game = new Game(ctx);
     game.start();
   }
-}
