@@ -12,9 +12,9 @@ const colorPatternStandard = [
     "crimson",
     "blueviolet",
     "limegreen",
-    "orange",
-    "gold",
-    "hotpink"
+    // "orange",
+    // "gold",
+    // "hotpink"
 ]
   
   // const appliedColor = [
@@ -31,3 +31,12 @@ function random(n) {
     return Math.floor(Math.random() * n);
 }
   
+
+// Tests
+// const game = new Game();
+// game.newBoard();
+// console.table(game.board);
+// console.log("jugador")
+// console.table(game.playerCells);
+// game.absorbCells();
+// console.table(game.playerCells);
