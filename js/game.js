@@ -3,6 +3,7 @@ class Game {
   constructor () {
       this.board = [];
       this.playerMoves = 0;
+      this.maxMoves = 0;
       this.playerBoard = []; //keep track of cells in player's control. Starts with top-left cell.
   }
 
@@ -20,6 +21,7 @@ class Game {
         this.playerBoard.push(playerRow);
     }
     this.playerBoard[0][0] = true;
+    this.maxMoves = 21;
   }
 
   //executes a player move
@@ -31,6 +33,7 @@ class Game {
         }
       }
     }
+    this.playerMoves++;
   }
 
   //this method calls the _absorbCell function for every cell adjacent to the one given
@@ -71,6 +74,21 @@ class Game {
           this.board[row][column] = color;
         }
       }
+    }
+  }
+
+  //checks if we have won or if we have lost the game
+  _checkGameStatus() {
+    if (this.playerMoves <= this.maxMoves) {
+      for (let row of this.playerBoard) {
+        if (row.some((elem) => elem === false)) {
+          return false;
+        }
+      }
+      return true;
+    }
+    else {
+      return false;
     }
   }
 

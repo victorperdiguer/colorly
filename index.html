@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css"/>
-  <title>Meatball</title>
+  <title>Colorly</title>
 </head>
 <body>
 
@@ -17,21 +17,25 @@
     </main>
   </div>
 
-    <div id="lose-page">
+  <div id="game-page" class="hidden">
+    <div id="grid"></div>
+    <div id="color-buttons">
+      <button></button>
+      <button></button>
+      <button></button>
+      <button></button>
+      <button></button>
+      <button></button>
+    </div>
+  </div>
+
+    <div id="lose-page" class="hidden">
     <main>
       <h1>YOU LOSE SUCKER</h1>
     </main>
   </div>
   
-  <div id="grid"></div>
-  <div id="color-buttons">
-    <button></button>
-    <button></button>
-    <button></button>
-    <button></button>
-    <button></button>
-    <button></button>
-  </div>
+
 
   <script src="js/assets.js"></script>
   <script src="js/game.js"></script>
