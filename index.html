@@ -9,6 +9,8 @@
 </head>
 <body>
 
+  <h1>C O L O R L Y</h1>
+
   <div id="start-page">
     <main>
       <h1>Title of the game</h1>
@@ -17,16 +19,26 @@
     </main>
   </div>
 
-  <div id="game-page" class="hidden">
-    <h1>C O L O R L Y</h1>
+  <div id="game-page" class="hidden" style="display: none">
+
+    <div id="options">
+      <h2>Options</h2>
+    </div>
+
+    <div id="game">
     <div id="grid"></div>
-    <div id="color-buttons">
-      <button></button>
-      <button></button>
-      <button></button>
-      <button></button>
-      <button></button>
-      <button></button>
+      <div id="color-buttons">
+        <button class="color-button" id="color2" style="background-color: red;"></button>
+        <button class="color-button" id="color3" style="background-color: blue;"></button>
+        <button class="color-button" id="color1" style="background-color: green;"></button>
+        <button class="color-button" id="color4" style="background-color: orange;"></button>
+        <button class="color-button" id="color5" style="background-color: yellow;"></button>
+        <button class="color-button" id="color6" style="background-color: purple;"></button>
+      </div>
+    </div>
+
+    <div id="score">
+      <h2>Moves: 0/25</h2>
     </div>
   </div>
 

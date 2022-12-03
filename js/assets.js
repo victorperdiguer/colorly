@@ -9,12 +9,12 @@ const colorPatternGrayscale = [
   ]
   
 const colorPatternStandard = [
-    "crimson",
-    "blueviolet",
-    "limegreen",
-    // "orange",
-    // "gold",
-    // "hotpink"
+    "red",
+    "blue",
+    "green",
+    "orange",
+    "yellow",
+    "purple"
 ]
   
   // const appliedColor = [

@@ -5,6 +5,8 @@
    License: none (public domain)
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -22,7 +24,6 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -56,6 +57,12 @@ table {
 
 /* Basic styles, change according to your style */
 
+html {
+  font-family: 'Amatic SC';
+  font-size: 16px;
+}
+
+
 #start-page,
 #lose-page {
   height: 600px;
@@ -73,13 +80,26 @@ table {
   background-color: white;
   margin: auto;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 h1 {
-  display: flex;
-  align-self: center;
+  font-family: 'Amatic SC';
+  font-size: 3rem;
+  font-weight: 700;
+  text-decoration: black wavy underline;
+  text-decoration-skip-ink: none;
+  text-underline-offset: 8px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 20px;
 }
 
 #grid {
@@ -100,8 +120,7 @@ h1 {
 .cell {
   display: inline-block;
   width: 3vw;
-  padding-top: 1.5vw;
-  padding-bottom: 1.5vw;
+  height: 3vw;
 }
 
 .row {
@@ -110,5 +129,16 @@ h1 {
   justify-items: center;
 }
 
-#row-5-column-5 {
+#color-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.color-button {
+  align-self: center;
+  width: 5vw;
+  height: 5vw;
+  border-radius: 50%;
+  margin: 1vh 1vw;
 }
