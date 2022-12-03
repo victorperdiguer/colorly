@@ -9,7 +9,7 @@ class Game {
 
   //generate board of 9 rows x 16 columns with a given color pattern
   //each cell will have a value stating its color
-  _newBoard (rows = 4, columns = 4, colorPattern = colorPatternStandard) {
+  _newBoard (rows = 9, columns = 16, colorPattern = colorPatternStandard) {
     for (let i = 0; i < rows; i++) {
         const row = [];
         const playerRow = [];
