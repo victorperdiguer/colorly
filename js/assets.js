@@ -17,14 +17,14 @@ const colorPatternStandard = [
     "purple"
 ]
   
-  // const appliedColor = [
-  //   c1,
-  //   c2,
-  //   c3,
-  //   c4,
-  //   c5,
-  //   c6
-  // ];
+// const appliedColor = [
+//     color1,
+//     color2,
+//     color3,
+//     color4,
+//     color5,
+//     color6
+// ];
   
   //auxiliary function
 function random(n) {

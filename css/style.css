@@ -55,6 +55,16 @@ table {
   padding: 0;
 }
 
+/* Auxiliar classes */
+
+.hidden {
+  display: none;
+}
+
+.shown {
+  display: flex;
+}
+
 /* Basic styles, change according to your style */
 
 html {
@@ -85,7 +95,7 @@ html {
 
 h1 {
   font-family: 'Amatic SC';
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 700;
   text-decoration: black wavy underline;
   text-decoration-skip-ink: none;
@@ -96,6 +106,13 @@ h1 {
 }
 
 h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 20px;
+}
+
+h3 {
   font-size: 2rem;
   font-weight: 700;
   text-align: center;
@@ -107,38 +124,28 @@ h2 {
   margin: auto;
 }
 
-/* Auxiliar classes */
-
-.hidden {
-  display: none;
-}
-
-.shown {
-  display: flex;
-}
-
 .cell {
-  display: inline-block;
+  /* display: inline-block; */
   width: 3vw;
   height: 3vw;
 }
 
 .row {
-  margin: 0 auto;
   justify-content: center;
-  justify-items: center;
+  display: flex;
 }
 
 #color-buttons {
   margin-top: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .color-button {
   align-self: center;
-  width: 5vw;
-  height: 5vw;
-  border-radius: 50%;
+  width: 4vw;
+  height: 3vw;
+  border-radius: 20%;
   margin: 1vh 1vw;
 }
+

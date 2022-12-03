@@ -79,42 +79,18 @@ class Game {
 
   //checks if we have won or if we have lost the game
   _checkGameStatus() {
-    if (this.playerMoves <= this.maxMoves) {
-      for (let row of this.playerBoard) {
-        if (row.some((elem) => elem === false)) {
-          return false;
-        }
-      }
-      return true;
+    if (this.playerMoves > this.maxMoves) {
+      return "lost";
     }
     else {
-      return false;
+      for (let row = 0; row < game.playerBoard.length; row++) {
+        for (let column = 0; column < game.playerBoard[row].length; column++) {
+          if (game.playerBoard[row][column] === false) {
+            return "continue";
+          }
+        }
+      }
+      return "win";
     }
   }
-
-
-  // _assignControls() {
-  //   // Controles del teclado
-  //   document.addEventListener('keydown', (event) => {
-  //     switch (event.code) {
-  //       case 'ArrowLeft':
-  //         this.meatball.moveLeft();
-  //         break;
-  //       case 'ArrowRight':
-  //         this.meatball.moveRight();
-  //         break;
-  //       default:
-  //         break;
-  //     }
-  //   });
-  // }
-
-  // _update() {
-  //   window.requestAnimationFrame(() => this._update());
-  // }
-
-  // start() {
-  //   this._assignControls();
-  //   this._update();
-  // }
 }
