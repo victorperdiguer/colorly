@@ -53,7 +53,7 @@ function _end (win) {
     cells.forEach((cell) => cell.setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`))
 
     //cool message :)
-    document.querySelector("#grid").addEventListener('click', () => {
+    setTimeout(() => {
       clearInterval(endAnimation);
       cells.forEach((cell) => cell.setAttribute("style", `background-color: black`));
       //"you win"
@@ -117,7 +117,7 @@ function _end (win) {
         document.getElementById("row-6column-1").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
         document.getElementById("row-8column-1").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
       }
-    })
+    }, 1000)
   }, 50)
 }
 
