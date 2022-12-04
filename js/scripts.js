@@ -1,11 +1,13 @@
+//some DOM quick access
 const startPage = document.getElementById("start-page");
 const gamePage = document.getElementById("game-page");
 const colorButtons = document.querySelectorAll('.color-button');
+const instructionsButton = document.getElementById('options-instructions');
+const newGameButton = document.getElementById('options-new-game');
 
+//starts the game
 const game = new Game;
-
-//start button initializes game
-startPage.addEventListener('click', () => {
+function startGame () {
   startPage.classList.add("hidden");
   gamePage.removeAttribute("style");
   //generate board and absorb same color cells next to starting cell
@@ -30,11 +32,31 @@ startPage.addEventListener('click', () => {
 
   //we add the board we created to the HTML
   document.querySelector('#grid').innerHTML = html;
-})
+}
 
+//selects cell elements after creating them
 const cells = document.querySelectorAll(".cell");
 
-//end function
+//update scoreboard
+function _updateScoreboard(){
+  const score = document.querySelectorAll("#score h3");
+  score[0].textContent = `${game.playerMoves}/${game.maxMoves}`;
+}
+
+//instructions button
+function instructions () {
+  gamePage.setAttribute('style', 'display: none');
+  startPage.classList.remove("hidden");
+}
+
+//new game
+function newGame () {
+  startGame();
+  _updateScoreboard();
+  colorButtons.forEach((elem) => elem.removeAttribute('disabled'));
+}
+
+//end pf the game function
 function _end (win) {
   //disable buttons, game is over
   colorButtons.forEach((elem) => elem.setAttribute('disabled', ''));
@@ -44,7 +66,7 @@ function _end (win) {
     cells.forEach((cell) => cell.setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`))
 
     //cool message :)
-    window.addEventListener('click', () => {
+    document.querySelector("#grid").addEventListener('click', () => {
       clearInterval(endAnimation);
       cells.forEach((cell) => cell.setAttribute("style", `background-color: black`));
       //"you win"
@@ -112,7 +134,11 @@ function _end (win) {
   }, 50)
 }
 
-//events for every time we click a colored button
+//event listeners
+startPage.addEventListener('click', () => startGame());
+instructionsButton.addEventListener('click', () => instructions());
+newGameButton.addEventListener('click', () => newGame());
+
 colorButtons.forEach((button) => {
   button.addEventListener('click', () => {
     //reenable all buttons and disable the color just clicked
@@ -124,9 +150,7 @@ colorButtons.forEach((button) => {
     game.playerMove(colorPatternStandard[color]);
 
     //update scoreboard
-    const score = document.querySelectorAll("#score h3");
-    score[0].textContent = `${game.playerMoves}/${game.maxMoves}`;
-    game._recolorCells(colorPatternStandard[color]);
+    _updateScoreboard();
 
     //repaint css and html
     for (let row = 0; row < game.playerBoard.length; row++) {
@@ -148,5 +172,4 @@ colorButtons.forEach((button) => {
     }
   })
 })
-
 

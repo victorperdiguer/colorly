@@ -11,6 +11,7 @@
 
   <h1 id="title">C O L O R L Y</h1>
 
+  <!-- instructions -->
   <div id="start-page">
       <h2>How to play</h2>
       <div id="instructions"><img src="./img/instructions-black.png" alt="colorly instructions"></div>
@@ -20,39 +21,36 @@
       <h3>Click anywhere to play!</h3>
   </div>
 
-  <div id="game-page" class="hidden" style="display: none">
+  <!-- game html -->
+  <div id="game-page" style="display: none">
 
+    <!-- options -->
     <div id="options">
       <h2>Options</h2>
-      <h5>Instructions</h5>
-      <button class="button-option">Instructions</button>
+      <button id="options-instructions" class="button-option">Instructions</button>
+      <br>
+      <button id="options-new-game" class="button-option">New game</button>
     </div>
 
+    <!-- grid and buttons -->
     <div id="game">
     <div id="grid"></div>
       <div id="color-buttons">
-        <button class="color-button" id="0" style="background-color: red;"></button>
-        <button class="color-button" id="1" style="background-color: blue;"></button>
-        <button class="color-button" id="2" style="background-color: green;"></button>
-        <button class="color-button" id="3" style="background-color: orange;"></button>
-        <button class="color-button" id="4" style="background-color: yellow;"></button>
-        <button class="color-button" id="5" style="background-color: purple;"></button>
+        <button class="color-button red" id="0" style="background-color: red;"></button>
+        <button class="color-button blue" id="1" style="background-color: blue;"></button>
+        <button class="color-button green" id="2" style="background-color: green;"></button>
+        <button class="color-button orange" id="3" style="background-color: orange;"></button>
+        <button class="color-button yellow" id="4" style="background-color: yellow;"></button>
+        <button class="color-button purple" id="5" style="background-color: purple;"></button>
       </div>
     </div>
 
+    <!-- scoreboard -->
     <div id="score">
       <h2>Moves made</h2>
-      <h3>0/23</h3>
+      <h3>0/21</h3>
     </div>
   </div>
-
-  <div id="lose-page" class="hidden">
-    <main>
-      <h1>YOU LOSE SUCKER</h1>
-    </main>
-  </div>
-  
-
 
   <script src="js/assets.js"></script>
   <script src="js/game.js"></script>

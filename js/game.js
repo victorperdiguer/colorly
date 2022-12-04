@@ -3,7 +3,7 @@ class Game {
   constructor () {
       this.board = [];
       this.playerMoves = 0;
-      this.maxMoves = 23;
+      this.maxMoves = 21;
       this.playerBoard = []; //keep track of cells in player's control. Starts with top-left cell.
   }
 

@@ -126,7 +126,6 @@ p {
 }
 
 #grid {
-  background-color: white;
   margin: auto;
 }
 
@@ -151,20 +150,60 @@ p {
   align-self: center;
   width: 4vw;
   height: 3vw;
+  margin: 1vh 1vw;
+  border-radius: 20%;
+  border: outset 3px;
+}
+
+.color-button:hover {
+  border-style: inset;
+}
+
+button:disabled, button[disabled] {
+  border-style: inset;
+}
+
+#options h2 {
+  margin-bottom: 20px;
+}
+
+.button-option {
+  align-self: center;
+  width: auto;
+  min-width: 7vw;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  height: 3vw;
   border-radius: 20%;
   margin: 1vh 1vw;
+  border: outset 3px;
 }
 
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
-  }
+.red {
+  border-color: red;
 }
 
-.rotate {
-  width: 3vw;
-  animation: rotation 2s infinite linear;
+.blue {
+  border-color: blue;
+}
+
+.green {
+  border-color: green;
+}
+
+.orange {
+  border-color: orange;
+}
+
+.yellow {
+  border-color: yellow;
+}
+
+.purple {
+  border-color: purple;
+}
+
+.button-option:hover {
+  border-style: inset;
 }
