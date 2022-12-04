@@ -35,12 +35,80 @@ startPage.addEventListener('click', () => {
 
 const cells = document.querySelectorAll(".cell");
 
-//win function
-function win () {
+//end function
+function _end (win) {
+  //epilepsy
   const winAnimation = setInterval(() => {
-    console.log(cells);
-    cells.forEach((cell) => cell.classList.add('rotate'));
-  }, 200)
+    const cells = document.querySelectorAll(".cell");
+    cells.forEach((cell) => cell.setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`))
+
+    //cool message :)
+    window.addEventListener('click', () => {
+      clearInterval(winAnimation);
+      cells.forEach((cell) => cell.setAttribute("style", `background-color: black`));
+      //"you win"
+      //Y
+      document.getElementById("row-0column-2").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-1column-2").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-1column-3").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-1column-4").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-0column-4").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-2column-3").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-3column-3").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      //O
+      document.getElementById("row-0column-6").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-1column-6").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-2column-6").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-3column-6").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-0column-8").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-1column-8").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-2column-8").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-3column-8").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-0column-7").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-3column-7").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      //U
+      document.getElementById("row-0column-10").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-1column-10").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-2column-10").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-3column-10").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-0column-12").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-1column-12").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-2column-12").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-3column-12").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-3column-11").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      //W
+      document.getElementById("row-5column-3").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-6column-3").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-7column-3").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-8column-4").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-7column-5").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-8column-6").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-7column-7").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-6column-7").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-5column-7").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      //I
+      document.getElementById("row-5column-9").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-6column-9").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-7column-9").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-8column-9").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      //N
+      document.getElementById("row-5column-11").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-6column-11").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-7column-11").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-8column-11").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-5column-14").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-6column-14").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-7column-14").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-8column-14").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-6column-12").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      document.getElementById("row-7column-13").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      if (!win) {
+        document.getElementById("row-5column-1").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+        document.getElementById("row-6column-1").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+        document.getElementById("row-8column-1").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
+      }
+    })
+  }, 15)
 }
 
 //events for every time we click a colored button
@@ -56,7 +124,7 @@ colorButtons.forEach((button) => {
 
     //update scoreboard
     const score = document.querySelectorAll("#score h3");
-    score[0].textContent = `${game.playerMoves}/21`;
+    score[0].textContent = `${game.playerMoves}/${game.maxMoves}`;
     game._recolorCells(colorPatternStandard[color]);
 
     //repaint css and html
@@ -71,11 +139,12 @@ colorButtons.forEach((button) => {
     }
 
     //check game status after every move
+    console.log(game._checkGameStatus());
     if (game._checkGameStatus() === "lost") {
-      win();
+      _end(false);
     }
     if (game._checkGameStatus() === "win") {
-      alert('You win');
+      _end(true);
     }
   })
 })
