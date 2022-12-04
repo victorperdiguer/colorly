@@ -1,6 +1,5 @@
 const startPage = document.getElementById("start-page");
 const gamePage = document.getElementById("game-page");
-const losePage = document.getElementById("lose-page");
 const colorButtons = document.querySelectorAll('.color-button');
 
 const game = new Game;
@@ -37,14 +36,16 @@ const cells = document.querySelectorAll(".cell");
 
 //end function
 function _end (win) {
+  //disable buttons, game is over
+  colorButtons.forEach((elem) => elem.setAttribute('disabled', ''));
   //epilepsy
-  const winAnimation = setInterval(() => {
+  const endAnimation = setInterval(() => {
     const cells = document.querySelectorAll(".cell");
     cells.forEach((cell) => cell.setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`))
 
     //cool message :)
     window.addEventListener('click', () => {
-      clearInterval(winAnimation);
+      clearInterval(endAnimation);
       cells.forEach((cell) => cell.setAttribute("style", `background-color: black`));
       //"you win"
       //Y
@@ -108,7 +109,7 @@ function _end (win) {
         document.getElementById("row-8column-1").setAttribute("style", `background-color: ${colorPatternStandard[random(6)]}`);
       }
     })
-  }, 15)
+  }, 50)
 }
 
 //events for every time we click a colored button
@@ -139,7 +140,6 @@ colorButtons.forEach((button) => {
     }
 
     //check game status after every move
-    console.log(game._checkGameStatus());
     if (game._checkGameStatus() === "lost") {
       _end(false);
     }
