@@ -3,13 +3,16 @@ class Game {
   constructor () {
       this.board = [];
       this.playerMoves = 0;
-      this.maxMoves = 0;
+      this.maxMoves = 23;
       this.playerBoard = []; //keep track of cells in player's control. Starts with top-left cell.
   }
 
   //generate board of 9 rows x 16 columns with a given color pattern
   //each cell will have a value stating its color
   _newBoard (rows = 9, columns = 16, colorPattern = colorPatternStandard) {
+    this.board = [];
+    this.playerBoard = [];
+    this.playerMoves = 0;
     for (let i = 0; i < rows; i++) {
         const row = [];
         const playerRow = [];
@@ -21,7 +24,6 @@ class Game {
         this.playerBoard.push(playerRow);
     }
     this.playerBoard[0][0] = true;
-    this.maxMoves = 21;
   }
 
   //executes a player move

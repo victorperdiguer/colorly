@@ -1,13 +1,12 @@
 const startPage = document.getElementById("start-page");
 const gamePage = document.getElementById("game-page");
 const losePage = document.getElementById("lose-page");
-const startButton = document.getElementById("start");
 const colorButtons = document.querySelectorAll('.color-button');
 
 const game = new Game;
 
 //start button initializes game
-startButton.addEventListener('click', () => {
+startPage.addEventListener('click', () => {
   startPage.classList.add("hidden");
   gamePage.removeAttribute("style");
   //generate board and absorb same color cells next to starting cell
@@ -34,7 +33,15 @@ startButton.addEventListener('click', () => {
   document.querySelector('#grid').innerHTML = html;
 })
 
-const cells = document.querySelector(".cell");
+const cells = document.querySelectorAll(".cell");
+
+//win function
+function win () {
+  const winAnimation = setInterval(() => {
+    console.log(cells);
+    cells.forEach((cell) => cell.classList.add('rotate'));
+  }, 200)
+}
 
 //events for every time we click a colored button
 colorButtons.forEach((button) => {
@@ -42,7 +49,7 @@ colorButtons.forEach((button) => {
     //reenable all buttons and disable the color just clicked
     colorButtons.forEach((elem) => elem.removeAttribute('disabled'));
     button.setAttribute('disabled', '');
-    
+
     //make player move with the clicked color
     color = Number(button.getAttribute('id'));
     game.playerMove(colorPatternStandard[color]);
@@ -65,7 +72,7 @@ colorButtons.forEach((button) => {
 
     //check game status after every move
     if (game._checkGameStatus() === "lost") {
-      alert('You lose');
+      win();
     }
     if (game._checkGameStatus() === "win") {
       alert('You win');

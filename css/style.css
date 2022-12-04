@@ -75,15 +75,16 @@ html {
 
 #start-page,
 #lose-page {
-  height: 600px;
-  width: 1000px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
   margin: 0 auto;
-  border: 1px solid black;
   margin-top: 30px;
+}
+
+#instructions img {
+  height: 50vh;
 }
 
 #game-page {
@@ -119,6 +120,11 @@ h3 {
   margin-top: 20px;
 }
 
+p {
+  font-size: 1.8rem;
+  margin-top: 5px;
+}
+
 #grid {
   background-color: white;
   margin: auto;
@@ -149,3 +155,16 @@ h3 {
   margin: 1vh 1vw;
 }
 
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.rotate {
+  width: 3vw;
+  animation: rotation 2s infinite linear;
+}
