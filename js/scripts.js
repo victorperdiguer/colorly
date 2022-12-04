@@ -43,19 +43,6 @@ function _updateScoreboard(){
   score[0].textContent = `${game.playerMoves}/${game.maxMoves}`;
 }
 
-//instructions button
-function instructions () {
-  gamePage.setAttribute('style', 'display: none');
-  startPage.classList.remove("hidden");
-}
-
-//new game
-function newGame () {
-  startGame();
-  _updateScoreboard();
-  colorButtons.forEach((elem) => elem.removeAttribute('disabled'));
-}
-
 //end pf the game function
 function _end (win) {
   //disable buttons, game is over
@@ -132,6 +119,19 @@ function _end (win) {
       }
     })
   }, 50)
+}
+
+//instructions button
+function instructions () {
+  gamePage.setAttribute('style', 'display: none');
+  startPage.classList.remove("hidden");
+}
+
+//new game
+function newGame () {
+  startGame();
+  _updateScoreboard();
+  colorButtons.forEach((elem) => elem.removeAttribute('disabled'));
 }
 
 //event listeners
