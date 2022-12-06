@@ -10,13 +10,11 @@ The player starts in the top-left corner's cell. He can choose any color from th
 
 A **neighbouring** cell is a cell that is directly adjacent to any cell controlled by the player - that is, vertically or horizontally. 
 
-Everytime the player picks a color, a **move** is made.
+Everytime the player picks a color, a **move** is made. The player can also **shuffle** the rest of the board to randomize the color of the cells he hasn't absorbed yet. This also counts as one **move**.
 
 The player **wins** the game by filling the grid with one color with less moves than the maximum allowed.
 
-The player **loses** the game if he reaches the move limit and the grid still has at least 2 different colors.
-
-The player can **shuffle** the rest of the board - this also counts as one **move**.
+The player **loses** the game if he passes the move limit and the grid still has at least 2 different colors.
 
 ## User stories MVP
 
@@ -36,7 +34,6 @@ The player can **shuffle** the rest of the board - this also counts as one **mov
 - User can undo his last move
 - User can play a custom-size grid
 - User can change the color palette to change the appearance of the grid
--
 
 ## File structure
 
@@ -46,5 +43,5 @@ The player can **shuffle** the rest of the board - this also counts as one **mov
 
 ## Useful links
 
-- [Presentation slides]()
-- [Deployed game]()
+- [Presentation slides](https://slides.com/d/bx2zeNc/live)
+- [Deployed game](https://victorperdiguer.github.io/colorly/)

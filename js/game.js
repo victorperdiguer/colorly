@@ -70,7 +70,7 @@ class Game {
     }
   }
 
-  //Recolors the cells in player's control with the new selected color
+  //Recolors the cells in player's control with the new selected color. Currently not in use but probably useful if selectable color palettes are added in the future.
   _recolorCells (color) {
     for (let row = 0; row < this.playerBoard.length; row++) {
       for (let column = 0; column < this.playerBoard[row].length; column++) {
