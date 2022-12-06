@@ -1,7 +1,6 @@
-# Game name
+# C O L O R L Y
 
-<!-- When you finish, add a nice screenshot of your game -->
-<!--[<img src="./img/page.png">]()-->
+<img src="/img/game-screenshot.png">
 
 ## Description
 
@@ -17,6 +16,8 @@ The player **wins** the game by filling the grid with one color with less moves 
 
 The player **loses** the game if he reaches the move limit and the grid still has at least 2 different colors.
 
+The player can **shuffle** the rest of the board - this also counts as one **move**.
+
 ## User stories MVP
 
 - User can always access the instructions
@@ -27,22 +28,23 @@ The player **loses** the game if he reaches the move limit and the grid still ha
 
 ## User stories Backlog
 
+- ~~User can play a new game at any point~~ Done!
+- ~~User can reshuffle the colors of unabsorbed cells at the cost of 1 move~~ Done!
+- ~~Game tracks highscore from browser session~~ Done!
+
+**To do**
 - User can undo his last move
 - User can play a custom-size grid
-- User can play with a custom number of colors
-- User can play a new game at any point
-- User can reshuffle the colors of unabsorbed cells at the cost of 1 move
 - User can change the color palette to change the appearance of the grid
-
+-
 
 ## File structure
 
-- <code>game.js</code>: contains all the elements for the game to work. Methods: start(), \_update()
-- <code>scripts.js</code>: contains all the DOM manipulation code to start the game
+- <code>assets.js</code>: contains certain variables and auxiliary functions
+- <code>game.js</code>: contains all the elements for the game to work.
+- <code>scripts.js</code>: contains all the DOM manipulation code to play the game
 
 ## Useful links
-
-<!-- When you finish, add these links and commit -->
 
 - [Presentation slides]()
 - [Deployed game]()

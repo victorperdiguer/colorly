@@ -12,6 +12,7 @@ function startGame () {
   startPage.classList.add("hidden");
   gamePage.removeAttribute("style");
   //generate board and absorb same color cells next to starting cell
+  _updateScoreboard();
   game._newBoard();
   game._checkNeighbours(0, 0, game.board[0][0]);
 
@@ -38,14 +39,31 @@ function startGame () {
 //selects cell elements after creating them
 const cells = document.querySelectorAll(".cell");
 
+//check highscore in local storage
+function highscore () {
+  if (localStorage.getItem('highscore') === null) {
+    localStorage.setItem('highscore', `${game.playerMoves}`);
+  }
+  else {
+    const currentHighScore = Number(localStorage.getItem('highscore'));
+    if (game.playerMoves < currentHighScore) {
+      localStorage.setItem('highscore', `${game.playerMoves}`);
+    }
+  }
+}
+
 //update scoreboard
 function _updateScoreboard(){
-  const score = document.querySelectorAll("#score h3");
+  const score = document.querySelectorAll("#score #player-moves");
+  const highScore = document.querySelectorAll("#score #highscore");
   score[0].textContent = `${game.playerMoves}/${game.maxMoves}`;
+  highScore[0].textContent = localStorage.getItem('highscore');
 }
 
 //end pf the game function
 function _end (win) {
+  highscore();
+  _updateScoreboard;
   //disable buttons, game is over
   colorButtons.forEach((elem) => elem.setAttribute('disabled', ''));
   //epilepsy
@@ -171,7 +189,7 @@ function shuffle () {
   }
 }
 
-//event listeners
+//event listeners for buttons
 startPage.addEventListener('click', () => startGame());
 instructionsButton.addEventListener('click', () => instructions());
 newGameButton.addEventListener('click', () => newGame());
