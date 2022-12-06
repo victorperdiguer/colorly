@@ -4,6 +4,7 @@ const gamePage = document.getElementById("game-page");
 const colorButtons = document.querySelectorAll('.color-button');
 const instructionsButton = document.getElementById('options-instructions');
 const newGameButton = document.getElementById('options-new-game');
+const shuffleButton = document.getElementById('options-shuffle'); 
 
 //starts the game
 const game = new Game;
@@ -134,10 +135,47 @@ function newGame () {
   colorButtons.forEach((elem) => elem.removeAttribute('disabled'));
 }
 
+//shuffle
+function shuffle () {
+  //disable buttons
+  colorButtons.forEach((elem) => elem.removeAttribute('disabled'));
+
+  //if the shuffle ended up putting same-color cells adjacent to the ones we had, we have to absorb them.
+  //this will also count towards the move limit
+  game.shuffle();
+  game.playerMove(game.currentColor);
+
+  //repaint css and html
+  for (let row = 0; row < game.playerBoard.length; row++) {
+    for (let column = 0; column < game.playerBoard[row].length; column++) {
+      const cell = document.getElementById(`row-${row}column-${column}`);
+      if (game.playerBoard[row][column] === false) {
+        const color = game.board[row][column];
+        cell.setAttribute("style", `background-color: ${color}`);
+      }
+      else {
+        cell.setAttribute("style", `background-color: ${game.currentColor}`);
+      }
+    }
+  }
+
+  //update scoreboard, shuffling counts as a move
+  _updateScoreboard();
+
+  //check for end of game
+  if (game._checkGameStatus() === "lost") {
+    _end(false);
+  }
+  if (game._checkGameStatus() === "win") {
+    _end(true);
+  }
+}
+
 //event listeners
 startPage.addEventListener('click', () => startGame());
 instructionsButton.addEventListener('click', () => instructions());
 newGameButton.addEventListener('click', () => newGame());
+shuffleButton.addEventListener('click', () => shuffle());
 
 colorButtons.forEach((button) => {
   button.addEventListener('click', () => {
@@ -148,13 +186,14 @@ colorButtons.forEach((button) => {
     //make player move with the clicked color
     color = Number(button.getAttribute('id'));
     game.playerMove(colorPatternStandard[color]);
+    game.currentColor = colorPatternStandard[color];
 
     //update scoreboard
     _updateScoreboard();
 
     //repaint css and html
     for (let row = 0; row < game.playerBoard.length; row++) {
-      for (let column = 0; column < game.playerBoard[0].length; column++) {
+      for (let column = 0; column < game.playerBoard[row].length; column++) {
         if (game.playerBoard[row][column]) {
           const cell = document.getElementById(`row-${row}column-${column}`);
           cell.setAttribute("style", `background-color: ${colorPatternStandard[color]}`);
@@ -172,4 +211,3 @@ colorButtons.forEach((button) => {
     }
   })
 })
-

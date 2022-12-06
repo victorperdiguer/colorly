@@ -5,6 +5,7 @@ class Game {
       this.playerMoves = 0;
       this.maxMoves = 21;
       this.playerBoard = []; //keep track of cells in player's control. Starts with top-left cell.
+      this.currentColor = '';
   }
 
   //generate board of 9 rows x 16 columns with a given color pattern
@@ -24,12 +25,13 @@ class Game {
         this.playerBoard.push(playerRow);
     }
     this.playerBoard[0][0] = true;
+    this.currentColor = this.board[0][0];
   }
 
   //executes a player move
   playerMove (color) {
     for (let row = 0; row < this.playerBoard.length; row++) {
-      for (let column = 0; column < this.playerBoard[0].length; column++) {
+      for (let column = 0; column < this.playerBoard[row].length; column++) {
         if (this.playerBoard[row][column]) {
           this._checkNeighbours(row, column, color);
         }
@@ -71,9 +73,20 @@ class Game {
   //Recolors the cells in player's control with the new selected color
   _recolorCells (color) {
     for (let row = 0; row < this.playerBoard.length; row++) {
-      for (let column = 0; column < this.playerBoard[0].length; column++) {
+      for (let column = 0; column < this.playerBoard[row].length; column++) {
         if (this.playerBoard[row][column]) {
           this.board[row][column] = color;
+        }
+      }
+    }
+  }
+
+  //Recolors cells not yet in the player's control to a random color. Counts as a player move.
+  shuffle () {
+    for (let row = 0; row < this.playerBoard.length; row++) {
+      for (let column = 0; column < this.playerBoard[row].length; column++) {
+        if (this.playerBoard[row][column] === false) {
+          this.board[row][column] = colorPatternStandard[random(colorPatternStandard.length)];
         }
       }
     }

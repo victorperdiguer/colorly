@@ -70,6 +70,9 @@ table {
 html {
   font-family: 'Amatic SC';
   font-size: 16px;
+  background-image: url(../img/crumbled-paper-background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #start-page,
@@ -84,10 +87,10 @@ html {
 
 #instructions img {
   height: 50vh;
+  mix-blend-mode: multiply;
 }
 
 #game-page {
-  background-color: white;
   margin: auto;
   display: flex;
   justify-content: space-evenly;
